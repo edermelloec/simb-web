@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		auth.inMemoryAuthentication()
 			.withUser("eder.mello").password("123321").roles("")
 			.and()
-			.withUser("Admin").password("admin").roles("");
+			.withUser("Admin").password("149eb2d2e78ef4b3fab67fdcb431c97f").roles("");
 	}
 	
 	@Override
