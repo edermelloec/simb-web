@@ -147,8 +147,6 @@ public class BovinosController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String alterar(@Validated Bovino bovino, RedirectAttributes attributes) {
-		
-		
 		Bovino bovinoAux = bovinoClient.listarUm(bovino.getIdBovino());
 		bovino.setEcc(bovinoAux.getEcc());
 		bovino.setPeso(bovinoAux.getPeso());
