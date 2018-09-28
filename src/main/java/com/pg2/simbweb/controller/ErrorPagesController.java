@@ -21,5 +21,4 @@ public class ErrorPagesController {
 	public String internalServerError() {
 		return "error/500";
 	}
-	
 }
