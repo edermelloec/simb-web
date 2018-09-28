@@ -35,7 +35,7 @@ public class TarefasController {
 	private static final String PESQUISA_TAREFAS_CONCLUIDAS_VIEW = "tarefa/PesquisaTarefasFinalizadas";
 	
 	
-	@Autowired
+	@Autowired 
 	private FuncionarioClient funcionarioClient;
 	
 	@Autowired
