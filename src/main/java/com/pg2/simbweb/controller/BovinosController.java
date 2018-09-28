@@ -63,7 +63,7 @@ public class BovinosController {
 	
 	@RequestMapping("/alterar")
 	public String alterar() {
-		return "/bovino/AlterarBovino";
+		return "bovino/AlterarBovino";
 	}
 	
 	

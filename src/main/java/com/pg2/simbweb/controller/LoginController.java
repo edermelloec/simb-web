@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+ 
 
 
 
@@ -23,7 +23,7 @@ public class LoginController {
 		}
 		//ModelAndView mv = new ModelAndView("/login"); 
 		
-		return "/Login";
+		return "Login";
 	}
 	
 	
