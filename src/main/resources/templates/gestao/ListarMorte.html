@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/LayoutPadrao">
+
+<head>
+<title>Simb WEB</title>
+</head>
+
+<body>
+	<section layout:fragment="conteudo">
+
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-10">
+						<h1>Mortes</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+
+					<h3>Selecione o Tipo de Busca</h3>
+				</div>
+			</div>
+			<form method="GET" action="/gestao/listar/morte"
+				class="form-vertical  js-form-loading">
+
+				<div layout:include="layout/MensagemGeral"></div>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="form-group">
+
+								<select class="form-control" name="tipoBusca">
+									<option value="nomeBovino">Nome Bovino</option>
+									<option value="dataMorte">Data Morte</option>
+									<option value="causa">Causa</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="input-group">
+								<input class="form-control" placeholder="Informe sua Busca!"
+									autofocus="autofocus" name="descricao"></input> <span
+									class="input-group-btn ">
+									<button type="submit" class="btn btn-default ">
+										<i class="glyphicon glyphicon-search"></i>
+									</button>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</form>
+
+
+			<div class="table-responsive">
+				<table id="tabela-produtos"
+					class="table  table-striped  table-bordered  table-hover  table-condensed  js-sticky-table">
+					<thead class="aw-table-header-solid">
+						<tr class="table-pesq-bovino-col-center">
+
+							<th class="table-pesq-bovino-col-center">Data Morte</th>
+							<th class="table-pesq-bovino-col-center">Bovino</th>
+							<th class="table-pesq-bovino-col-center">Causa</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="m : ${mortos} ">
+
+							<td class="table-pesq-bovino-col-center"
+								th:text="${#dates.format(m.dataMorte, 'dd/MM/yyyy')}"></td>
+							<td class="table-pesq-bovino-col-center" th:text="${m.idBovino}"></td>
+							<td class="table-pesq-bovino-col-center" th:text="${m.causa}"></td>
+						</tr>
+						<tr th:if="${mortos.empty}">
+							<td colspan="9" class="table-pesq-bovino-col-center">Nenhuma
+								Morte cadastrado</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<div
+					class="col-xs-12  col-md-4  aw-text-xs-center  aw-text-md-right">
+					<span class="aw-pagination-info"
+						th:text="${#lists.size(mortos)} + ' mortes encontrados'">
+
+					</span>
+				</div>
+			</div>
+
+
+		</div>
+
+	</section>
+</body>
+</html>
