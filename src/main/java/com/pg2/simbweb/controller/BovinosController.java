@@ -41,7 +41,7 @@ import com.pg2.simbweb.domain.tarefa.Tarefa;
 public class BovinosController {
 	
 	private static final String ALTERAR_BOVINO_VIEW = "bovino/AlterarBovino";
-	private static final String PESQUISA_BOVINO_VIEW = "/bovino/PesquisaBovinos";
+	private static final String PESQUISA_BOVINO_VIEW = "bovino/PesquisaBovinos";
 
 	Bovino auxBovino;
 	
